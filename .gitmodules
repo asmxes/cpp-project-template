@@ -1,0 +1,3 @@
+[submodule "include/ry"]
+	path = include/ry
+	url = https://github.com/asmxes/ry.git
