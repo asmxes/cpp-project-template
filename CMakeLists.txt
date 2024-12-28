@@ -19,6 +19,7 @@ option(DEBUG_MODE "Build in debug mode" OFF)
 
 if (DEBUG_MODE)
     set(CMAKE_BUILD_TYPE Debug)
+    set(CMAKE_CXX_FLAGS_DEBUG "-g")
     set(TARGET_NAME "exe_d")
 else()
     set(CMAKE_BUILD_TYPE Release)
