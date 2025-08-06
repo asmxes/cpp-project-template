@@ -20,10 +20,10 @@ option(DEBUG_MODE "Build in debug mode" OFF)
 if (DEBUG_MODE)
     set(CMAKE_BUILD_TYPE Debug)
     set(CMAKE_CXX_FLAGS_DEBUG "-g")
-    set(TARGET_NAME "exe_d")
+    set(TARGET_NAME "${PROJECT_NAME}_d")
 else()
     set(CMAKE_BUILD_TYPE Release)
-    set(TARGET_NAME "exe")
+    set(TARGET_NAME ${PROJECT_NAME})
 endif()
 
 # Imposta il percorso delle librerie esterne
@@ -37,6 +37,8 @@ file(GLOB_RECURSE SOURCES "${SRC_DIR}/*.cpp")
 
 # Aggiunge il target eseguibile
 add_executable(${TARGET_NAME} ${SOURCES})
+# add_library(${TARGET_NAME} SHARED ${SOURCES})
+# add_library(${TARGET_NAME} STATIC ${SOURCES})
 
 # Linka le librerie esterne se necessario
 # target_link_libraries(${TARGET_NAME} libname)
